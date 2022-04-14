@@ -15,7 +15,7 @@ export default function ArticlePreview({ title, coverImage, date, author, slug, 
             height={imgHeight}
           />
           <h1>{title}</h1>
-          <time dateTime={date.substring(0, 10)}></time>
+          <time dateTime={date.substring(0, 10)}>{date.substring(0, 10)}</time>
           <div>{author.name}</div>
           <div>{excerpt}</div>
         </div>
