@@ -9,7 +9,6 @@ export default function MyApp({ Component, pageProps }) {
       <DivGrid>
         <Header />
         <Component {...pageProps} />
-
       </DivGrid>
     </>
   )

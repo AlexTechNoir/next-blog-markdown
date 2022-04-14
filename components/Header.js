@@ -17,7 +17,7 @@ export default function Header() {
 const StyledHeader = styled.div`
   font-family: 'Faster One';
   grid-area: 1 / 2 / 2 / 3;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: .5em;
   color: white;
   > a {
