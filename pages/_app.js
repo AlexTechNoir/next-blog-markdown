@@ -1,16 +1,29 @@
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import Header from '../components/Header'
+import { CacheProvider } from '@emotion/react'
+import createEmotionCache from '../components/createEmotionCache'
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../components/theme'
+import CssBaseline from '@mui/material/CssBaseline'
 
-export default function MyApp({ Component, pageProps }) {
+const clientSideEmotionCache = createEmotionCache()
+
+export default function MyApp(props) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+
   return (
-    <>
-      <Global styles={GlobalStyle} />
-      <DivGrid>
-        <Header />
-        <Component {...pageProps} />
-      </DivGrid>
-    </>
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <Global styles={GlobalStyle} />
+        <DivGrid>
+          <Header />
+          <Component {...pageProps} />
+        </DivGrid>
+      </ThemeProvider>
+    </CacheProvider>
   )
 }
 
