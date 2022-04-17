@@ -28,8 +28,9 @@ export default function MyApp(props) {
 }
 
 const GlobalStyle = css`
-  * {
+  * :not(.header > a) {
     box-sizing: border-box;
+    font-family: 'Quando';
   }
 
   html, body {
@@ -48,6 +49,10 @@ const GlobalStyle = css`
     height: 100%;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   /* faster-one-regular - latin */
   @font-face {
     font-family: 'Faster One';
@@ -55,11 +60,25 @@ const GlobalStyle = css`
     font-weight: 400;
     src: url('/fonts/faster-one-v15-latin-regular.eot'); /* IE9 Compat Modes */
     src: local(''),
-        url('/fonts/faster-one-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('/fonts/faster-one-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/fonts/faster-one-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
-        url('/fonts/faster-one-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/fonts/faster-one-v15-latin-regular.svg#FasterOne') format('svg'); /* Legacy iOS */
+        url('/fonts/faster-one/faster-one-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/fonts/faster-one/faster-one-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/fonts/faster-one/faster-one-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('/fonts/faster-one/faster-one-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/fonts/faster-one/faster-one-v15-latin-regular.svg#FasterOne') format('svg'); /* Legacy iOS */
+  }
+
+  /* quando-regular - latin */
+  @font-face {
+    font-family: 'Quando';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/quando-v12-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+        url('/fonts/quando/quando-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/fonts/quando/quando-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/fonts/quando/quando-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('/fonts/quando/quando-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/fonts/quando/quando-v12-latin-regular.svg#Quando') format('svg'); /* Legacy iOS */
   }
 `
 

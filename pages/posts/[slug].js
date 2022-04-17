@@ -1,7 +1,6 @@
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 import Error from 'next/error'
-import Image from 'next/image'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 
@@ -43,7 +42,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ post }) {
-  console.log(post)
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <Error statusCode={404} />
@@ -51,22 +49,43 @@ export default function Post({ post }) {
 
   return (
     <Article>
-      <title>{post.title}</title>
-      <Image
+      <h1>{post.title}</h1>
+      <img
         src={post.coverImage}
         alt={`Cover Image for ${post.title}`}
-        layout="responsive"
         width={1024}
         height={800}
       />
-      <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
-      <span>{post.author.name}</span>
-      <p>{post.content}</p>
+      <div>
+        <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
+        <span>{post.author.name}</span>
+      </div>
+      <article dangerouslySetInnerHTML={{__html: post.content}}></article>
     </Article>
   )
 }
 
-const Article = styled.article`
+const Article = styled.div`
   grid-area: 2 / 2 / 3 / 3;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  > h1 {
+    width: 1024px;
+    text-align: center;
+  }
+  > img {
+    margin-bottom: 1em;
+  }
+  > div {
+    width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  > article {
+    width: 1024px;
+  }
 `

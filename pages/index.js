@@ -49,4 +49,11 @@ export default function Home({ allPosts }) {
 
 const Posts = styled.main`
   grid-area: 2 / 2 / 3 / 3;
+  margin-top: 1em;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: center;
+  align-items: start;
+  gap: 1em;
 `

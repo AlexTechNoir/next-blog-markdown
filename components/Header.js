@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <StyledHeader>
+    <StyledHeader className="header">
       <Link href="/">
         <a>
-          <img src="/img/wheel.png" alt="" />
+          <img src="/img/wheel.png" alt="logo" />
           Carsss!
         </a>
       </Link>
@@ -15,12 +15,14 @@ export default function Header() {
 }
 
 const StyledHeader = styled.div`
-  font-family: 'Faster One';
+  box-sizing: border-box; 
   grid-area: 1 / 2 / 2 / 3;
   font-size: 3rem;
   padding: .5em;
   color: white;
   > a {
+    box-sizing: border-box !important;
+    font-family: 'Faster One';
     text-decoration: none;
     color: white;
     > img {
