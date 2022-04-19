@@ -27,7 +27,9 @@ export async function getStaticProps({ params }) {
     'author',
     'content',
     'ogImage',
-    'coverImage'
+    'coverImage',
+    'imgWidth',
+    'imgHeight',
   ])
   const content = await markdownToHtml(post.content || '')
 
@@ -53,8 +55,8 @@ export default function Post({ post }) {
       <img
         src={post.coverImage}
         alt={`Cover Image for ${post.title}`}
-        width={1024}
-        height={800}
+        width={post.imgWidth}
+        height={post.imgHeight}
       />
       <div>
         <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
@@ -78,6 +80,9 @@ const Article = styled.div`
   }
   > img {
     margin-bottom: 1em;
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
   }
   > div {
     width: 1024px;
