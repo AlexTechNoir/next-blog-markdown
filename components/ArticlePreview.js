@@ -51,7 +51,7 @@ export default function ArticlePreview({ title, coverImage, date, author, slug, 
                   {date.substring(0, 10)}
                 </Typography>
                 <Typography variant="body1" component="div">
-                  {author.name}
+                  {author}
                 </Typography>
               </div>
             </CardContent>

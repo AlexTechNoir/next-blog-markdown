@@ -27,21 +27,24 @@ export default function Home({ allPosts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Posts>
-        {
-          allPosts.map(post => (
-            <ArticlePreview 
-              key={post.slug}
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-              slug={post.slug}
-              excerpt={post.excerpt}
-              imgHeight={800}
-              imgWidth={1024}
-            />
-          ))
-        }
+        <h1>Latest</h1>
+        <div>
+          {
+            allPosts.slice(0, 6).map(post => (
+              <ArticlePreview 
+                key={post.slug}
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                author={post.author}
+                slug={post.slug}
+                excerpt={post.excerpt}
+                imgHeight={800}
+                imgWidth={1024}
+              />
+            ))
+          }
+        </div>
       </Posts>
     </>
   )
@@ -51,9 +54,17 @@ const Posts = styled.main`
   grid-area: 2 / 2 / 3 / 3;
   margin-top: 1em;
   padding: 1em;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-items: center;
-  align-items: start;
-  gap: 1em;
+  > :first-child {
+    margin: 1em;
+    color: white;
+    font-family: 'Quando';
+  }
+  > :nth-child(2) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    align-items: start;
+    column-gap: 1em;
+    row-gap: 3em;
+  }
 `

@@ -26,7 +26,6 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'content',
-    'ogImage',
     'coverImage',
     'imgWidth',
     'imgHeight',
@@ -60,7 +59,7 @@ export default function Post({ post }) {
       />
       <div>
         <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
-        <span>{post.author.name}</span>
+        <span>{post.author}</span>
       </div>
       <article dangerouslySetInnerHTML={{__html: post.content}}></article>
     </Article>

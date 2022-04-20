@@ -33,6 +33,10 @@ const GlobalStyle = css`
     font-family: 'Quando';
   }
 
+  html {
+    font-size: 1rem;
+  }
+
   html, body {
     padding: 0;
     margin: 0;
