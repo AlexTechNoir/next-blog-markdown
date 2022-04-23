@@ -1,5 +1,5 @@
 ---
-title: 'BMW'
+title: 'Culpa animi architecto incidunt nostrum, ratione cam!'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 coverImage: '/img/blog/bmw/cover.jpg'
 date: '2020-03-25T05:35:07.322Z'

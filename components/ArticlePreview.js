@@ -1,62 +1,20 @@
 import Link from 'next/link'
-import Card from '@mui/material/Card'
-import { CardActionArea } from '@mui/material'
-import CardMedia from '@mui/material/CardMedia'
-import CardContent from '@mui/material/CardContent'
-import Typography from '@mui/material/Typography'
-import { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 
-export default function ArticlePreview({ title, coverImage, date, author, slug, excerpt }) {
-  useEffect(() => {
-    const buttons = document.querySelectorAll('.card')
-    buttons.forEach(button => button.tabIndex = -1)
-  }, [])
-
-  const customMuiStyles = {
-    maxWidth: 345,
-    '> button > div > p': {
-      marginBottom: '1em'
-    },
-    '.title': {
-      fontWeight: 600
-    },
-    '.dateAndAuthor': {
-      display: 'flex',
-      justifyContent: 'space-between'
-    }
-  }
-
+export default function ArticlePreview({ title, coverImage, date, slug }) {
   return (
     <Link href={`/posts/${slug}`} passHref>
-      <StyledLink>
-        <Card sx={customMuiStyles}>
-          <CardActionArea className="card" disableRipple>
-            <CardMedia
-              component="img"
-              height="140"
-              image={coverImage}
-              alt={`car image`}
-            />
-            <CardContent>
-              <Typography className="title" gutterBottom variant="h5" component="div">
-                {title}
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                {excerpt}
-              </Typography>
-              <div className="dateAndAuthor">
-                <Typography variant="body1" component="div">
-                  {date.substring(0, 10)}
-                </Typography>
-                <Typography variant="body1" component="div">
-                  {author}
-                </Typography>
-              </div>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+      <StyledLink coverImage={coverImage} id="preview">
+        <div>
+          <div>
+            <div></div>
+            <h1 id="title">{title}</h1>
+            <div id="date">
+              <time dateTime={date.substring(0, 10)}>{date.substring(0, 10)}</time>
+            </div>
+          </div>
+        </div>
       </StyledLink>
     </Link>
   )
@@ -80,8 +38,35 @@ const wrooom = keyframes`
   }
 `
 
+// Additional styles in index.js file
 const StyledLink = styled.a`
+  margin: 1em;  
+  max-width: 1024px;
+  width: 100%;
+  height: 250px;
+  color: white;
+  > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: ${props => `url(${props.coverImage})`};    
+    background-size: cover;
+    background-position: center;
+    > div {
+      position: absolute;      
+      width: 50%;
+      height: 100%;         
+      > :first-child {
+        width: 50%;
+        height: 250px;
+      }
+      > h1 {       
+        font-size: 1.5em;
+        margin-bottom: 1em;
+      }
+    }
+  }
   &:hover {
-    animation: .2s 2 ${wrooom} linear; 
+    animation: ${wrooom} .2s 2 linear !important;
   }
 `
