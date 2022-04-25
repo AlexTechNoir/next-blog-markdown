@@ -3,6 +3,7 @@ import markdownToHtml from '../../lib/markdownToHtml'
 import Error from 'next/error'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
+import ProgressiveImage from '../../components/article/ProgressiveImage'
 
 export async function getStaticPaths() {
   const posts = getAllPosts(['slug'])
@@ -26,9 +27,13 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'content',
-    'coverImage',
-    'imgWidth',
-    'imgHeight',
+    'imgThumbnail',
+    'imgSmall',
+    'imgSmallWidth',
+    'imgMid',
+    'imgMidWidth',
+    'imgBig',
+    'imgBigWidth',
   ])
   const content = await markdownToHtml(post.content || '')
 
@@ -49,25 +54,22 @@ export default function Post({ post }) {
   }
 
   return (
-    <Article>
-      <h1>{post.title}</h1>
-      <img
-        src={post.coverImage}
-        alt={`Cover Image for ${post.title}`}
-        width={post.imgWidth}
-        height={post.imgHeight}
-      />
-      <div>
-        <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
-        <span>{post.author}</span>
-      </div>
-      <article dangerouslySetInnerHTML={{__html: post.content}}></article>
-    </Article>
+    <>
+      <ProgressiveImage post={post} />
+      <Article>
+        <h1>{post.title}</h1>
+        <div>
+          <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
+          <span>by {post.author}</span>
+        </div>
+        <article dangerouslySetInnerHTML={{__html: post.content}}></article>
+      </Article>
+    </>
   )
 }
 
 const Article = styled.div`
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 3 / 2 / 4 / 3;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -76,12 +78,6 @@ const Article = styled.div`
   > h1 {
     width: 1024px;
     text-align: center;
-  }
-  > img {
-    margin-bottom: 1em;
-    max-width: 1024px;
-    width: 100%;
-    height: 100%;
   }
   > div {
     width: 1024px;

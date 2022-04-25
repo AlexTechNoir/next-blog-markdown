@@ -20,6 +20,7 @@ const StyledHeader = styled.div`
   font-size: 3rem;
   padding: .5em;
   color: white;
+  margin-bottom: 1em;
   > a {
     box-sizing: border-box !important;
     font-family: 'Faster One';

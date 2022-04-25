@@ -2,10 +2,10 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 
-export default function ArticlePreview({ title, coverImage, date, slug }) {
+export default function ArticlePreview({ title, img, date, slug }) {
   return (
     <Link href={`/posts/${slug}`} passHref>
-      <StyledLink coverImage={coverImage} id="preview">
+      <StyledLink img={img} id="preview">
         <div>
           <div>
             <div></div>
@@ -49,7 +49,7 @@ const StyledLink = styled.a`
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: ${props => `url(${props.coverImage})`};    
+    background-image: ${props => `url(${props.img})`};    
     background-size: cover;
     background-position: center;
     > div {

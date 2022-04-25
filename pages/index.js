@@ -9,7 +9,7 @@ export async function getStaticProps() {
     'title',
     'date',
     'slug',
-    'coverImage',
+    'imgMid',
   ])
 
   return {
@@ -39,7 +39,7 @@ export default function Home({ allPosts }) {
               <ArticlePreview 
                 key={post.slug}
                 title={post.title}
-                coverImage={post.coverImage}
+                img={post.imgMid}
                 date={post.date}
                 slug={post.slug}
               />
@@ -52,12 +52,12 @@ export default function Home({ allPosts }) {
 }
 
 const Posts = styled.main`
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 4 / 3;
   padding: 1em;
   > :first-child {
     margin: 1em 0 0 1em;
     color: white;
-    font-family: 'Quando';
+    font-family: 'Titillium Web';
   }
   > :nth-child(2) {
     display: flex;
