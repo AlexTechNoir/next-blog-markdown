@@ -10,6 +10,11 @@ export default function Header() {
           Carsss!
         </a>
       </Link>
+      <Link href="/all-articles">
+        <a>
+          All articles
+        </a>
+      </Link>
     </StyledHeader>
   )
 }
@@ -21,6 +26,9 @@ const StyledHeader = styled.div`
   padding: .5em;
   color: white;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   > a {
     box-sizing: border-box !important;
     font-family: 'Faster One';
@@ -29,6 +37,14 @@ const StyledHeader = styled.div`
     > img {
       height: 100%;
       width: 100px;
+    }
+  }
+  > :last-child {
+    font-family: 'Titillium Web';
+    font-size: 2.5rem;
+    font-weight: bold;
+    &:hover {
+      opacity: .8;
     }
   }
 `

@@ -34,5 +34,8 @@ const StyledFooter = styled.div`
   }
   > a {
     height: 24px;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `

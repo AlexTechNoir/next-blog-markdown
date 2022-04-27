@@ -11,6 +11,11 @@ imgMid: '/img/blog/aston-martin/cover-mid.jpg'
 imgMidWidth: 1280
 imgBig: '/img/blog/aston-martin/cover-big.jpg'
 imgBigWidth: 1920
+articlesAlike: [
+  { slug: 'bmw', title: 'Culpa animi architecto incidunt nostrum, ratione cam!' },
+  { slug: 'mazda', title: 'Ipsum porro cupiditate amet' },
+  { slug: 'hello-world', title: 'Beatae, debitis saepe nostrum!' },
+]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/react'
 
 export default function ArticlePreview({ title, img, date, slug }) {
   return (
-    <Link href={`/posts/${slug}`} passHref>
+    <Link href={`/posts/${encodeURIComponent(slug)}`} passHref>
       <StyledLink img={img} id="preview">
         <div>
           <div>

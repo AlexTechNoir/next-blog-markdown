@@ -31,6 +31,7 @@ export default function Home({ allPosts }) {
         <meta name="description" content="Home page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <Posts arePreviewsLoaded={arePreviewsLoaded}>
         <h1>Latest</h1>
         <div>
@@ -55,7 +56,7 @@ const Posts = styled.main`
   grid-area: 2 / 2 / 4 / 3;
   padding: 1em;
   > :first-child {
-    margin: 1em 0 0 1em;
+    margin: 0 0 0 1em;
     color: white;
     font-family: 'Titillium Web';
   }

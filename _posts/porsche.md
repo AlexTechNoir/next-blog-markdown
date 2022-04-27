@@ -1,5 +1,5 @@
 ---
-title: 'Et, iste praesentium.'
+title: 'Et, iste praesentium'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 date: '2020-03-19T05:35:07.322Z'
 author: Kira Nakazato
@@ -11,6 +11,11 @@ imgMid: '/img/blog/porsche/cover-mid.jpg'
 imgMidWidth: 1280
 imgBig: '/img/blog/porsche/cover-big.jpg'
 imgBigWidth: 1920
+articlesAlike: [
+  { slug: 'mercedes', title: 'Expedita numquam porro fugit libero unde' },
+  { slug: 'aston-martin', title: 'Reprehenderit, alias possimus ut a eligendi repellat' },
+  { slug: 'lotus-elise', title: 'Natus nemo alias assumenda tempora!' },
+]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

@@ -11,6 +11,11 @@ imgMid: '/img/blog/mercedes/cover-mid.jpg'
 imgMidWidth: 1280
 imgBig: '/img/blog/mercedes/cover-big.jpg'
 imgBigWidth: 1920
+articlesAlike: [
+  { slug: 'preview', title: 'Accusamus ratione sit vero, enim' },
+  { slug: 'toyota', title: 'Voluptatum ipsum doloribus laudantium, expedita asperiores amet!' },
+  { slug: 'hello-world', title: 'Beatae, debitis saepe nostrum!' },
+]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
