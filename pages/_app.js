@@ -46,11 +46,11 @@ const GlobalStyle = css`
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     height: 100%;
-    background-color: hsl(195, 100%, 65%);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230046ff'/%3E%3Cstop offset='1' stop-color='%230046ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230076ff'/%3E%3Cstop offset='1' stop-color='%230076ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300acff'/%3E%3Cstop offset='1' stop-color='%2300acff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230011FF'/%3E%3Cstop offset='1' stop-color='%230011FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23007BFF'/%3E%3Cstop offset='1' stop-color='%23007BFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300DCFF'/%3E%3Cstop offset='1' stop-color='%2300DCFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-color:  rgb(229, 168, 214);
+    background-image: url('/img/bg.svg');
     background-attachment: fixed;
     background-size: cover;
-    scrollbar-color: rgb(0, 17, 255) transparent;
+    scrollbar-color: hsl(227, 100%, 50%) transparent;
   }
 
   body {
@@ -61,7 +61,7 @@ const GlobalStyle = css`
       background-color: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: rgb(0, 17, 255);
+      background-color: hsl(227, 100%, 50%);
     }
   }
 

@@ -24,7 +24,6 @@ export default function Footer() {
 const StyledFooter = styled.div`
   grid-area: 4 / 1 / 5 / 4;
   color: white;
-  background-color: rgb(0, 17, 255);
   padding: 1em;
   display: flex;
   justify-content: center;
