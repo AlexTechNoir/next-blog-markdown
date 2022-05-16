@@ -67,8 +67,8 @@ const Posts = styled.main`
     // Odd and even ArticlePreview.js components
     > :nth-child(odd) {
       transition: 
-        transform .3s cubic-bezier(0.250, 0.460, 0.450, 0.940), 
-        opacity .5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        transform .7s cubic-bezier(0.250, 0.460, 0.450, 0.940), 
+        opacity .7s cubic-bezier(0.250, 0.460, 0.450, 0.940);
       transform: ${props => !props.arePreviewsLoaded ? 'translateX(-1000px)' : 'translateX(0)'};
       opacity: ${props => !props.arePreviewsLoaded ? 0 : 1};
       clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
@@ -90,8 +90,8 @@ const Posts = styled.main`
     }
     > :nth-child(even) {
       transition: 
-        transform .3s cubic-bezier(0.250, 0.460, 0.450, 0.940), 
-        opacity .5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        transform .7s cubic-bezier(0.250, 0.460, 0.450, 0.940), 
+        opacity .7s cubic-bezier(0.250, 0.460, 0.450, 0.940);
       transform: ${props => !props.arePreviewsLoaded ? 'translateX(1000px)' : 'translateX(0)'};
       opacity: ${props => !props.arePreviewsLoaded ? 0 : 1};
       clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
