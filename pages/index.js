@@ -55,7 +55,7 @@ export default function Home({ allPosts }) {
 const Posts = styled.main`
   grid-area: 2 / 2 / 4 / 3;
   padding: 1em;
-  > :first-child {
+  > h1 {
     margin: 0 0 0 1em;
     color: white;
     font-family: 'Titillium Web';
@@ -110,6 +110,16 @@ const Posts = styled.main`
           margin: 1em 1.5em .5em 0;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 1216px) {
+    grid-area: 2 / 1 / 4 / 2;
+  }
+
+  @media only screen and (max-width: 428px) {
+    > h1 {
+      margin: 0;
     }
   }
 `

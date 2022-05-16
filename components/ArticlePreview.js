@@ -69,4 +69,24 @@ const StyledLink = styled.a`
   &:hover {
     animation: ${wrooom} .2s 2 linear !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    transform: unset !important;
+    opacity: unset !important;
+    clip-path: unset !important;    
+    > div {
+      border-radius: 1em;
+      > div {
+        border-radius: 1em;
+        width: 100%;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.459)) !important;
+        > :first-child {
+          display: none;
+        }
+        > h1, > :nth-child(3) {
+          margin: 16px !important;
+        }
+      } 
+    } 
+  }
 `

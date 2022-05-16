@@ -67,8 +67,8 @@ export default function Post({ post }) {
 
       <ProgressiveImage post={post} />
       <Article>
-        <h1>{post.title}</h1>
-        <div>
+        <h1 className="title">{post.title}</h1>
+        <div className="dateAndAuthor">
           <time dateTime={post.date.substring(0, 10)}>{post.date.substring(0, 10)}</time>
           <span>by {post.author}</span>
         </div>
@@ -118,24 +118,29 @@ const Article = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
+  width: 100%;
   max-width: 1024px;
   justify-self: center;
-  > :first-child {
-    width: 1024px;
+  > .title {
+    width: 100%;
+    max-width: 1024px;
     text-align: center;
   }
-  > div {
-    width: 1024px;
+  > .dateAndAuthor {
+    width: 100%;
+    max-width: 1024px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
   }
   > article {
-    width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     margin-bottom: 1em;
   }
   > hr {
     width: 100%;
+    max-width: 1024px;
   }
   > :nth-child(5) {
     font-size: 2em;
@@ -147,18 +152,43 @@ const Article = styled.div`
   }
   > ul {
     align-self: flex-start;
+    list-style: none;
     > li {
       margin-bottom: 1em;
-      list-style-image: url(/icons/car.png);      
+      list-style-image: url(/icons/car.png);
       > a {
-        text-decoration: none;
         color: white;
         font-size: 1.75em;
         margin-left: .5em;
+        display: inline-block;
+        vertical-align: middle;
+        text-indent: 0;
       }
       &:hover {
         animation: ${wrooom} .2s 2 linear !important;
       }
+    }
+  }
+
+  @media only screen and (max-width: 1216px) {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  @media only screen and (max-width: 768px) {
+    > .title {
+      font-size: 1.5em;
+    }
+    > :nth-child(5) {
+      font-size: 1.75em;
+    }
+  }
+
+  @media only screen and (max-width: 428px) {
+    > :nth-child(5) {
+      font-size: 1.5em;
+    }
+    > ul > li > a {
+      font-size: 1.25em;
     }
   }
 `

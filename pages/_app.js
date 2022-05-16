@@ -46,7 +46,7 @@ const GlobalStyle = css`
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     height: 100%;
-    background-color:  rgb(229, 168, 214);
+    background-color: rgb(229, 168, 214);
     background-image: url('/img/bg.svg');
     background-attachment: fixed;
     background-size: cover;
@@ -108,4 +108,8 @@ const DivGrid = styled.div`
   grid-template-columns: 1fr 1200px 1fr;
   min-height: 100%;
   position: relative;
+  
+  @media only screen and (max-width: 1216px) {
+    grid-template-columns: 100%;
+  }
 `

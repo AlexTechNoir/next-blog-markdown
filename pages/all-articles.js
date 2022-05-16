@@ -19,14 +19,14 @@ export default function AllArticles({ allPosts }) {
   return (
     <Articles>
       <h1>All articles</h1>
-      <div>
+      <div className="list">
         <ul>
           {
             allPosts.map(post => (
               <li key={post.slug}>
                 <Link href={`/posts/${encodeURIComponent(post.slug)}`} passRef>
                   <a>
-                    {post.date.substring(0, 10)} &nbsp;&nbsp;&nbsp; {post.title}
+                    {post.date.substring(0, 10)} &nbsp;&nbsp;-&nbsp;&nbsp; {post.title}
                   </a>
                 </Link>
               </li>
@@ -66,15 +66,54 @@ const Articles = styled.div`
   > h1 {
     width: 100%;
   }
-  > div > ul > li {
-    list-style: none;
-    font-size: 1.75em;
-    margin-bottom: 1em;
-    &:hover {
-      animation: ${wrooom} .2s 2 linear !important;
+  > .list > ul {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    > li {
+      list-style: none;
+      font-size: 1.75em;
+      margin-bottom: 1em;
+      > a {
+        color: white;
+        display: inline-block;
+      }
+      &:hover {
+        animation: ${wrooom} .2s 2 linear !important;
+      }
     }
-    > a {
-      color: white;
+  } 
+
+  @media only screen and (max-width: 1216px) {
+    grid-area: 2 / 1 / 4 / 2;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    > .list > ul > li {
+      font-size: 1.4em;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 0;
+    > .list > ul {
+      padding-left: 0;
+      > li {
+        font-size: 1.4em;
+      }
+    } 
+  }
+
+  @media only screen and (max-width: 428px) {
+    > h1 {
+      font-size: 1.5em;
+      margin-top: 0;
+    }
+    > .list > ul {
+      padding-left: 0;
+      > li {
+        font-size: 1em;
+      }
+    } 
   }
 `
